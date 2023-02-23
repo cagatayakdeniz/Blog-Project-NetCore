@@ -1,0 +1,12 @@
+C:\Users\User\Documents\C#Projects\BlogProject\BlogProject.DTO\bin\Debug\netcoreapp3.1\BlogProject.DTO.deps.json
+C:\Users\User\Documents\C#Projects\BlogProject\BlogProject.DTO\bin\Debug\netcoreapp3.1\BlogProject.DTO.dll
+C:\Users\User\Documents\C#Projects\BlogProject\BlogProject.DTO\bin\Debug\netcoreapp3.1\BlogProject.DTO.pdb
+C:\Users\User\Documents\C#Projects\BlogProject\BlogProject.DTO\obj\Debug\netcoreapp3.1\BlogProject.DTO.csprojAssemblyReference.cache
+C:\Users\User\Documents\C#Projects\BlogProject\BlogProject.DTO\obj\Debug\netcoreapp3.1\BlogProject.DTO.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\C#Projects\BlogProject\BlogProject.DTO\obj\Debug\netcoreapp3.1\BlogProject.DTO.AssemblyInfoInputs.cache
+C:\Users\User\Documents\C#Projects\BlogProject\BlogProject.DTO\obj\Debug\netcoreapp3.1\BlogProject.DTO.AssemblyInfo.cs
+C:\Users\User\Documents\C#Projects\BlogProject\BlogProject.DTO\obj\Debug\netcoreapp3.1\BlogProject.DTO.dll
+C:\Users\User\Documents\C#Projects\BlogProject\BlogProject.DTO\obj\Debug\netcoreapp3.1\BlogProject.DTO.pdb
+C:\Users\User\Documents\C#Projects\BlogProject\BlogProject.DTO\bin\Debug\netcoreapp3.1\BlogProject.Entities.dll
+C:\Users\User\Documents\C#Projects\BlogProject\BlogProject.DTO\bin\Debug\netcoreapp3.1\BlogProject.Entities.pdb
+C:\Users\User\Documents\C#Projects\BlogProject\BlogProject.DTO\obj\Debug\netcoreapp3.1\BlogProject.DTO.csproj.CopyComplete

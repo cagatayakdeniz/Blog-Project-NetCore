@@ -1,0 +1,97 @@
+@model BlogListModel
+@{
+    var comments = (List<CommentListModel>)ViewBag.Comments;
+        void GetComments(List<CommentListModel> comments)
+ {
+    @if (comments.Count > 0)
+    {
+        @foreach (var comment in comments)
+        {
+        <div class="media my-3">
+            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+            <div class="media-body">
+                <h5 class="mt-0">@comment.AuthorName</h5>
+                @comment.Description
+                <button type="button" class="btn btn-sm btn-primary float-right" onclick=showCommentForm(@comment.Id,@comment.BlogId)>Cevapla</button>
+                <div id="commentBox@(comment.Id)">
+
+                </div>
+                @{
+                    GetComments(@comment.SubComments);
+                }
+            </div>
+        </div>
+        }   
+    }
+ }
+}
+
+<!-- Title -->
+<h1 class="mt-4">@Model.Title</h1>
+
+<!-- Author -->
+@* <p class="lead">
+    by
+    <a href="#">Start Bootstrap</a>
+    </p> *@
+
+<hr>
+
+<!-- Date/Time -->
+<p>Posted on @Model.PostedTime.ToLongDateString()</p>
+
+<hr>
+
+<!-- Preview Image -->
+<getblogimage id="@Model.Id" blog-image-type="@BlogImageType.BlogDetail"></getblogimage>
+
+<hr>
+
+<!-- Post Content -->
+@Model.Description
+
+<!-- Comments Form -->
+<div class="card my-4">
+    <h5 class="card-header">Yorum Yaz: </h5>
+    <div class="card-body">
+        <form method="POST" action="/Home/AddComment">
+            <input type="hidden" name="BlogId" value="@Model.Id">   
+            <div class="form-group">
+                <label>Gözükmesini İstediğiniz Ad: </label>
+                <input type="text" class="form-control" name="AuthorName" required>
+            </div>
+            <div class="form-group">
+                <label>E-mail Adresiniz: </label>
+                <input type="text" class="form-control" name="AuthorEmail" required>
+            </div>
+            <div class="form-group">
+                <label>Yorumunuz: </label>
+                <textarea class="form-control" rows="3" name="Description"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Gönder</button>
+        </form>
+    </div>
+</div>
+
+
+<!-- Comment with nested comments -->
+@{
+    GetComments(comments);
+}
+
+@section Javascript
+{
+<script>
+      function showCommentForm(id,blogId){
+      let html = `<form method="POST" action="/Home/AddComment"> <input type="hidden" name="BlogId" value="${blogId}"> <input type="hidden" name="ParentCommentId" value="${id}"> <div class="form-group"> 
+        <label class="mt-3">Gözükmesini İstediğiniz Ad: </label> <input type="text" class="form-control" name="AuthorName" required> </div><div class="form-group"> 
+        <label>E-mail Adresiniz: </label> <input type="text" class="form-control" name="AuthorEmail" required> </div><div class="form-group"> 
+        <label>Yorumunuz: </label> <textarea class="form-control" rows="3" name="Description"></textarea> </div><button type="submit" class="btn btn-warning" onclick=hideCommentForm(${id})>Vazgeç</button> <button type="submit" class="btn btn-primary">Gönder</button> </form>`;
+      $("#commentBox"+id).html(html);
+      }
+
+      function hideCommentForm(id){
+            $("#commentBox"+id).html("");
+      }
+</script>
+}
